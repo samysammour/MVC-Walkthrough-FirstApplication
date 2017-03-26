@@ -5,19 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using FirstApplication.Models;
 
+
 namespace FirstApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private MvcContext context = new MvcContext();
         public ActionResult Index()
         {
-            Person person1 = new Person();
-            person1.Id = 1;
-            person1.Name = "Alice";
-
-            Person person2 = new Person {Id = 2, Name = "John"};
-
-            List<Person> list = new List<Person>();
+            var list = context.Students.ToList();
             return View(list);
         }
 

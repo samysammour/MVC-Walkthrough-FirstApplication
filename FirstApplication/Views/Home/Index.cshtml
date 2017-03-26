@@ -1,5 +1,4 @@
-﻿@model List<Person>
-
+﻿@model List<Student>
 @{
     ViewBag.Title = "Home";
     var message = "Home - Index";
@@ -12,11 +11,6 @@
 
 @foreach (var item in Model)
 {
-    <text>Id</text>
-    @item.Id
-
-    <text>Name</text>
     @Html.TextBoxFor(m => item.Name)
-
-    <hr />
 }
+
