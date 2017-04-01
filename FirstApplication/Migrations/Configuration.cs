@@ -11,7 +11,7 @@ namespace FirstApplication.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(FirstApplication.Models.MvcContext context)
