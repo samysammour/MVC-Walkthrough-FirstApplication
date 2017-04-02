@@ -3,7 +3,7 @@ namespace FirstApplication.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class StudentTable : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -24,23 +24,31 @@ namespace FirstApplication.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false, maxLength: 20),
+                        Email = c.String(),
+                        CreateDate = c.DateTime(),
                         Age = c.Int(nullable: false),
                         Year = c.Int(nullable: false),
-                        Student_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Students", t => t.Student_Id)
-                .Index(t => t.Student_Id);
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Teachers",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Age = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.StudentCourses", "StudentId", "dbo.Students");
-            DropForeignKey("dbo.Students", "Student_Id", "dbo.Students");
-            DropIndex("dbo.Students", new[] { "Student_Id" });
             DropIndex("dbo.StudentCourses", new[] { "StudentId" });
+            DropTable("dbo.Teachers");
             DropTable("dbo.Students");
             DropTable("dbo.StudentCourses");
         }

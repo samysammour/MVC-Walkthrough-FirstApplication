@@ -24,6 +24,6 @@ namespace FirstApplication.Models
 
         public int Age { get; set; }
         public int Year { get; set; }
-        public virtual ICollection<Student> StudentCources { get; set; }
+        public virtual ICollection<StudentCourse> StudentCources { get; set; }
     }
 }

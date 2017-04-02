@@ -160,16 +160,13 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentCourseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703261041181_StudentTable.cs" />
-    <Compile Include="Migrations\201703261041181_StudentTable.Designer.cs">
-      <DependentUpon>201703261041181_StudentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703261046296_TeacherTable.cs" />
-    <Compile Include="Migrations\201703261046296_TeacherTable.Designer.cs">
-      <DependentUpon>201703261046296_TeacherTable.cs</DependentUpon>
+    <Compile Include="Migrations\201704020857112_InitialMigration.cs" />
+    <Compile Include="Migrations\201704020857112_InitialMigration.Designer.cs">
+      <DependentUpon>201704020857112_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MvcContext.cs" />
@@ -221,7 +218,16 @@
     <Content Include="Views\Data\Get.cshtml" />
     <Content Include="Views\Shared\_HeaderMessage.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Delete.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\StudentCourse\Create.cshtml" />
+    <Content Include="Views\StudentCourse\Delete.cshtml" />
+    <Content Include="Views\StudentCourse\Details.cshtml" />
+    <Content Include="Views\StudentCourse\Edit.cshtml" />
+    <Content Include="Views\StudentCourse\Index.cshtml" />
+    <Content Include="Views\Student\_StudentCourses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,11 +244,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703261041181_StudentTable.resx">
-      <DependentUpon>201703261041181_StudentTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703261046296_TeacherTable.resx">
-      <DependentUpon>201703261046296_TeacherTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704020857112_InitialMigration.resx">
+      <DependentUpon>201704020857112_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
