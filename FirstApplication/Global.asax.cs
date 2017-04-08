@@ -17,5 +17,14 @@ namespace FirstApplication
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            var exception = Server.GetLastError();
+            Response.Clear();
+            Server.ClearError();
+            HttpException ex = exception as HttpException;
+            Response.Redirect(@"~/Error/?message=Technical Error, please contact us.");
+        }
     }
 }

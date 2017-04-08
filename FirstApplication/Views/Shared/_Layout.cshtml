@@ -37,6 +37,12 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Team", "Team", "Home")</li>
                 </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+
+                        @Html.Action("GetBestStudent", "Home")
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

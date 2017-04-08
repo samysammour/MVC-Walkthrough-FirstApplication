@@ -12,10 +12,11 @@ namespace FirstApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private MvcContext context = new MvcContext();
+        private MvcContext _context = new MvcContext();
         public ActionResult Index()
         {
-            var list = context.Students.ToList();
+            throw new Exception();
+            var list = _context.Students.ToList();
             return View(list);
         }
 
@@ -36,6 +37,12 @@ namespace FirstApplication.Controllers
         public ActionResult Team()
         {
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult GetBestStudent()
+        {
+            var student = _context.Students.OrderBy(x => x.Name).ToList();
+            return PartialView("_GetBestStudent", student);
         }
     }
 }
